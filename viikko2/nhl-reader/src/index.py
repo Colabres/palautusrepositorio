@@ -18,10 +18,15 @@ def main():
     print("Oliot:")
     nat = input("Give nationality")
     print(f"Players from {nat}")
-
+    playerList=[]
     for player in players:
         if player.nationality == nat.upper():
-            print(player)
+            playerList.append(player)
+    sortedPlayer=sorted(playerList,key=lambda x: x.points)
+    sortedPlayer.reverse()
+    for player in sortedPlayer:
+        print(player)
+
 
 if __name__ == "__main__":
     main()
