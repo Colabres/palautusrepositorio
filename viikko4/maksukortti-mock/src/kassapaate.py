@@ -6,8 +6,14 @@ class Kassapaate:
         self.myytyja_lounaita = 0
 
     def lataa(self, kortti, summa):
-        kortti.lataa(summa)
+        if summa > 0:
+            kortti.lataa(summa)
+        else: print("summa pitää olla positiivinen")
 
     def osta_lounas(self, kortti):
-        kortti.osta(HINTA)
+        if kortti.saldo >= HINTA:
+
+            kortti.osta(HINTA)
+        else:
+            print("Saldo ei riittä")
         self.myytyja_lounaita = self.myytyja_lounaita + 1
